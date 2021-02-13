@@ -1,0 +1,109 @@
+// variables
+$bg-color: #ebd5be;
+$eclipse: #70487d;
+$title-color: #000;
+
+/*
+* basic function we need
+*/
+
+@mixin flex($js, $ai) {
+	display: flex;
+	justify-content: $js;
+	align-items: $ai;
+}
+
+:root {
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+body {
+	background-color: $bg-color;
+	padding: 0 60px;
+	height: 100vh;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav {
+	@include flex(space-between, center);
+	ul {
+		@include flex(space-between, center);
+		li {
+			margin-right: 2rem;
+			color: rgba(5, 5, 5, 0.548);
+			cursor: pointer;
+		}
+	}
+}
+
+.main {
+	@include flex(space-between, center);
+
+	.left-side {
+		h1 {
+			font-size: 4rem;
+			margin-bottom: 1rem;
+			span {
+				color: $eclipse;
+			}
+		}
+		p {
+			width: 500px;
+			margin-bottom: 2.5rem;
+			color: rgba(0, 0, 0, 0.637);
+		}
+		a {
+			padding: 1rem 2rem;
+			text-decoration: none;
+			background-color: #000;
+			color: #f5f5f5;
+			font-weight: 600;
+			border-radius: 10px;
+			&:hover {
+				background-color: rgba(0, 0, 0, 0.76);
+			}
+		}
+	}
+	.right-side {
+		margin-left: 10rem;
+		position: relative;
+		flex-grow: 1;
+
+		.girl {
+			position: absolute;
+			left: -50px;
+			transition: all 1s;
+		}
+		.ellipse {
+			transition: all 1s;
+			margin-left: 1rem;
+		}
+
+		&:hover {
+			.girl {
+				left: -40px;
+			}
+			.ellipse {
+				margin-left: -1rem;
+			}
+		}
+	}
+}
+
+.footer {
+	img {
+		margin-right: 1rem;
+	}
+}
+@media (max-width: 600px) {
+	body {
+		background-color: red !important;
+	}
+}
