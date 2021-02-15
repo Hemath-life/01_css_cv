@@ -100,7 +100,7 @@ nav ul li {
 
 .main .right-side .girl {
   position: absolute;
-  left: -30px;
+  left: 0;
   -webkit-transition: all 1s;
   transition: all 1s;
 }
@@ -112,7 +112,7 @@ nav ul li {
 }
 
 .main .right-side:hover .girl {
-  left: -40px;
+  left: 10px;
 }
 
 .main .right-side:hover .ellipse {
